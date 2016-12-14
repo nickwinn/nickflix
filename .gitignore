@@ -1,0 +1,6 @@
+#Packages
+.rpm
+.tar.gz
+
+#Mac Crap
+.DS_Store
