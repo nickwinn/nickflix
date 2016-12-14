@@ -1,6 +1,6 @@
 #Packages
-.rpm
-.tar.gz
+*.rpm
+*.tar.gz
 
 #Mac Crap
 .DS_Store
