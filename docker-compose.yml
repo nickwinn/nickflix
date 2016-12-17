@@ -3,4 +3,10 @@ services:
     plex:
        container_name: plex
        image: nickflix:base
-       
+       restart: unless-stopped
+       ports:
+         - 32400:32400
+         - 32469:32469
+       volumes:
+         - /volume:/media:ro
+         - /volume/docker/testplex/config:/config
