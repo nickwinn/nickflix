@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build --tag nickflix:test .
+docker build --no-cache --tag nickflix:test .
