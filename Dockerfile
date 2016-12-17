@@ -4,16 +4,19 @@ MAINTAINER Snappy Nachos <technick@gmail.com>
 RUN rpm -iUvh /root/plexmediaserver-1.3.2.3112-1751929.x86_64.rpm
 #RUN rpm -Uvh https://downloads.plex.tv/plex-media-server/1.3.2.3112-1751929/plexmediaserver-1.3.2.3112-1751929.x86_64.rpm
 ADD plexmediaserver.service /lib/systemd/system/
-ADD Preferences.xml /tmp/Preferences.xml
-ADD preplex.sh /usr/local/bin/
+#ADD Preferences.xml /tmp/Preferences.xml
+#ADD preplex.sh /usr/local/bin/
 
-RUN mkdir /config && \
+RUN mkdir -p /config/Plex\ Media\ Server\Logs && \
     mkdir /data && \
     chown plex:plex /config && \
     chown plex:plex /data && \
-    chmod 755 /usr/local/bin/preplex.sh && \
-    chown plex:plex /tmp/Preferences.xml
-VOLUME /config /data
+VOLUME /config/Plex\ Media\ Server/Logs /data
+
+ADD Preferences.xml /config/Plex\ Media\ Server/Preferences.xml
+
+RUN chown plex:plex /config/Plex\ Media\ Server/Preferences && \
+    chmod 600 /config/Plex\ Media\ Server/Preferences && \
 
 EXPOSE 32400 32469
 
