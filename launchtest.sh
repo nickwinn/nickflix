@@ -10,4 +10,3 @@ docker run -d --name testplex \
 --privileged nickflix:test
 docker exec -it testplex /bin/bash
 docker stop testplex && docker rm testplex
-########-v /sys/fs/cgroup:/sys/fs/cgroup:ro \
