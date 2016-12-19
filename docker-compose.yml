@@ -1,12 +1,24 @@
 version: '2'
 services:
     plex:
-       container_name: plex
-       image: nickflix:base
+       image: nickflix:latest
        restart: unless-stopped
        ports:
          - 32400:32400
          - 32469:32469
        volumes:
          - /volume:/media:ro
-         - /volume/docker/testplex/config:/config
+         - /volume/docker/nickflix/config:/config
+       environment:
+         - disableRemoteSecurity=0
+         - ManualPortMappingMode=1
+         - AcceptedEULA=1
+         - PublishServerOnPlexOnlineKey=1
+    plexpy:
+       image: linuxserver/plexpy
+       restart: unless-stopped
+       ports:
+         - 8181:8181
+       volumes:
+         - /volume/docker/nickflix/config:/logs:ro
+         - /volume/docker/nickflix/plexpy:/config

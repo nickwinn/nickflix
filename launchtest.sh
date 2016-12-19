@@ -7,6 +7,6 @@ docker run -d --name testplex \
 -e "ManualPortMappingMode=1" \
 -e "AcceptedEULA=1" \
 -e "PublishServerOnPlexOnlineKey=1" \
---privileged nickflix:test
+--privileged nickflix:latest
 docker exec -it testplex /bin/bash
 docker stop testplex && docker rm testplex
