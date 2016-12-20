@@ -2,18 +2,18 @@
 
 set -ex
 
-MEDIASRC="/volume"
-MEDIADEST="/config"
-PLEXCONFIGSRC="/volume/docker/nickflix/config"
-PLEXCONFIGDST="/config"
-disableRemoteSecurity="0"
-ManualPortMappingMode="1"
-AcceptedEULA="1"
-PublishServerOnPlexOnlineKey="1"
-PLEXPYCONFIGSRC="/volume/docker/nickflix/plexpy"
-PLEXPYCONFIGDST="/config"
-PLEXPYLOGSRC="$PLEXCONFIGSRC"
-PLEXPYLOGDST="/logs:ro"
+export MEDIASRC="/volume"
+export MEDIADST="/media"
+export PLEXCONFIGSRC="/volume/docker/nickflix/config"
+export PLEXCONFIGDST="/config"
+export disableRemoteSecurity="1"
+export ManualPortMappingMode="1"
+export AcceptedEULA="1"
+export PublishServerOnPlexOnlineKey="1"
+export PLEXPYCONFIGSRC="/volume/docker/nickflix/plexpy"
+export PLEXPYCONFIGDST="/config"
+export PLEXPYLOGSRC="$PLEXCONFIGSRC"
+export PLEXPYLOGDST="/logs"
 
 #/usr/local/bin/docker-compose pull
 /usr/local/bin/docker-compose kill
