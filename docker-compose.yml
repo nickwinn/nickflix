@@ -10,7 +10,7 @@ services:
          - /volume:/media:ro
          - /volume/docker/nickflix/config:/config
        environment:
-         - disableRemoteSecurity=0
+         - disableRemoteSecurity=1
          - ManualPortMappingMode=1
          - AcceptedEULA=1
          - PublishServerOnPlexOnlineKey=1
