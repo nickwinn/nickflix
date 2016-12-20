@@ -4,3 +4,6 @@
 
 #Mac Crap
 .DS_Store
+
+#Temp vim logs
+*.swp
