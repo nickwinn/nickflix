@@ -10,14 +10,10 @@ services:
          - /volume:/media:ro
          - /volume/docker/nickflix/config:/config
        environment:
-###         - disableRemoteSecurity=0
-###         - ManualPortMappingMode=1
-###         - AcceptedEULA=1
-###         - PublishServerOnPlexOnlineKey=1
-         - disableRemoteSecurity
-         - ManualPortMappingMode
-         - AcceptedEULA
-         - PublishServerOnPlexOnlineKey
+         - disableRemoteSecurity=0
+         - ManualPortMappingMode=1
+         - AcceptedEULA=1
+         - PublishServerOnPlexOnlineKey=1
     plexpy:
        image: linuxserver/plexpy
        restart: unless-stopped
